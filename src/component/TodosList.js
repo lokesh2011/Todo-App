@@ -2,41 +2,29 @@ import React, { useEffect, useState } from 'react'
 
 const TodosList = ({todos, setTodos, setEditTodo}) => {
 
-    const [data, setData] = useState({
-        items : [],
-        dataisLoaded : false
-    })
+    // const [data, setData] = useState({
+    //     items : [],
+    //     dataisLoaded : false
+    // })
 
-    useEffect ( () => {
+    // useEffect ( () => {
 
-        console.log('api call');
-        const timer = setTimeout(() => {
+    //     console.log('api call');
+    //     const timer = setTimeout(() => {
         
-            fetch('https://jsonplaceholder.typicode.com/posts')
-            // {
-            //     method: 'DELETE',
-            //     // body: JSON.stringify({
-            //     //     id: 1,
-            //     //     title: 'foo',
-            //     //     body: 'bar',
-            //     //     userId: 1,
-            //     // }),
-            //     //                 headers: {
-            //     //     'Content-type': 'application/json; charset=UTF-8',
-            //     // },
-            // })
-            .then((res) => res.json())
-            .then((json) => {
-                console.log(json);
-                setData({
-                    items : json,
-                    dataisLoaded : true
-                });
-            })
-        }, 5000);
-        return () => clearTimeout(timer);
+    //         fetch('https://jsonplaceholder.typicode.com/posts')
+    //         .then((res) => res.json())
+    //         .then((json) => {
+    //             console.log(json);
+    //             setData({
+    //                 items : json,
+    //                 dataisLoaded : true
+    //             });
+    //         })
+    //     }, 5000);
+    //     return () => clearTimeout(timer);
       
-    },[])
+    // },[])
 
     const handleComplete = (todo) =>{
         setTodos(
@@ -58,7 +46,7 @@ const TodosList = ({todos, setTodos, setEditTodo}) => {
     }
   return (
     <div> 
-        { (!data.dataisLoaded) 
+        {/* { (!data.dataisLoaded) 
          ? (
             <h2> pleses wait for some times... </h2>
             )
@@ -79,7 +67,7 @@ const TodosList = ({todos, setTodos, setEditTodo}) => {
             </div>
             )
 
-        }
+        } */}
         {todos.map((todo) => (
             <li className='list-item' key={todo.id}>
                 <input 
